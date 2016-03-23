@@ -35,13 +35,13 @@ rm -R debian-binary
 
 rm -R mfc5490cncupswrapper-1.1.2-2.i386.deb
 
-echo "Configurando la impresora"
-
-sudo /usr/local/Brother/Printer/mfc5490cn/cupswrapper/cupswrappermfc5490cn
-
 echo "Configurando el servidor de impresion"
 
 sudo systemctl enable org.cups.cupsd.service
 sudo systemctl start org.cups.cupsd.service
+
+echo "Configurando la impresora"
+
+sudo /usr/local/Brother/Printer/mfc5490cn/cupswrapper/cupswrappermfc5490cn
 
 echo "Hecho, ve a http://127.0.0.1:631 i añade la impresora lpd://(Your printer's IP address)/binary_p1"
